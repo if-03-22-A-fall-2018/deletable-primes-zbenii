@@ -26,7 +26,7 @@ bool is_prime(unsigned long n){
      return false;
  }
 
-return true;
+ return true;
 }
 
 unsigned long remove_digit(int index,unsigned long n){
@@ -45,7 +45,7 @@ int get_ways(unsigned long n){
       way+=get_ways(remove_digit(i,n));
     }
   }
-return way;
+ return way;
 
 }
 
