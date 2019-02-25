@@ -14,24 +14,26 @@
 #include <math.h>
 
 bool is_prime(unsigned long n){
-
-  if (n <= 1 || (n % 2 == 0 && n > 2))
- {
-   return false;
- }
-
- for(int i = 3; i <= sqrt(n); i+= 2)
- {
-   if (n % i == 0)
-     return false;
- }
-
+  if (n <= 1)
+   {
+       return false;
+   }
+   int j=0;
+   for (j = 2; j <= n / 2; j++)
+   {
+       if ((n % j) == 0)
+       {
+           return false;
+       }
+   }
  return true;
 }
 
 unsigned long remove_digit(int index,unsigned long n){
-   long num=pow(10,index);
-   return (n/(num*10))*num+(n%num);
+  long numPow=pow(10,index);
+  unsigned long num;
+  num = n/(numPow*10)*numPow+(n%numPow);
+  return num;
 }
 
 int get_ways(unsigned long n){
